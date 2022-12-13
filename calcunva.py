@@ -27,15 +27,20 @@ def resultado():
     global operador
     try:
         r=str(eval(operador))
+        operador=str(r)
     except:
         r= "Error"
     texto_pantalla.set(r)
 
 def borrar():
+    global operador
     pantalla.delete(0, END)
+    operador="" 
 def borrar_uno():
+    global operador
     largo = len(pantalla.get())
     pantalla.delete(largo-1, END)
+    operador=operador[0:len(operador)-1]
 
 clear()
 
